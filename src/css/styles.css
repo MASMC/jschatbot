@@ -1,5 +1,6 @@
 html {
 	background-color: #000;
+	color: #fff;
 }
 
 .sans {
@@ -16,4 +17,8 @@ html {
 
 .centerJustify {
 	text-align: center;
+}
+
+.hidden {
+	color: #000;
 }

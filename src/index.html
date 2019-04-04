@@ -4,6 +4,7 @@
 	<head>
 		<title>NodeJS Chat Bot, by Gear</title>
 		<link rel="stylesheet" type="text/css" href="css/styles.css">
+		<script src="js/chatHandler.js"></script>
 	</head>
 	<body>
 		<div class="centerJustify">
@@ -11,7 +12,11 @@
 			<p class="sans darkGrey">Made by Gear</p>
 		</div>
 		<div class="chatBox">
-
+			<form>
+				Text to display: <input type="text" name="toDisp"><br>
+				<input type="submit" value="Display">
+			</form>
+			<p class="hidden" id="dispText">owo</p>
 		</div>
 	</body>
 </html>
