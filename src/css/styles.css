@@ -1,0 +1,19 @@
+html {
+	background-color: #000;
+}
+
+.sans {
+	font-family: Comic Sans MS;
+}
+
+.darkGrey {
+	color: #444;
+}
+
+.lightGrey {
+	color: #aaa;
+}
+
+.centerJustify {
+	text-align: center;
+}
