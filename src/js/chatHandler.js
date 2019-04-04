@@ -37,5 +37,41 @@ function exec() {
 	let hiddenText = $1('p#dispText.hidden');
 	let parameters = parseURLParams(urlString);
 	hiddenText.setAttribute('class', '');
-	hiddenText.innerHTML = parameters['toDisp'];
+	addToCookie(parameters["toDisp"]);
+	hiddenText.innerHTML = parseCookie();
+}
+
+// Add the cookie to kep a running chat log
+// I enjoy my puns, so it is an "additive" :3
+function addToCookie(additive) {
+	let chatLog = accessCookie("log");
+	console.log(chatLog); // Testing purposes
+	chatLog = chatLog + "<br>" + additive;
+	console.log(chatLog); // Testing purposes
+	createCookie("log", chatLog);
+}
+
+/*---Cookie Helpers---*/
+// Helper to create a cookie, in case it's needed later.
+function createCookie(cookieName, cookieValue) {
+	document.cookie = cookieName + "=" + cookieValue + "; path=/";
+}
+
+// Helper to retrieve a value for a cookie
+function accessCookie(cookieName) {
+	let name = cookieName + '=';
+	let allCookies = document.cookie.split(';');
+	for (let i = 0; i < allCookies.length; i++) {
+		let temp = allCookies[i].trim();
+		if (temp.indexOf(name) === 0) return temp.substring(name.length);
+	}
+	return "";
+}
+/*---End of Helpers---*/
+
+// Parse the cookie and return it
+function parseCookie() {
+	let cookie = accessCookie("log");
+	// Return the log cookie!
+	return cookie;
 }
