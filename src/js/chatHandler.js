@@ -1,3 +1,5 @@
+const DEBUGGING = true;
+
 // URL parser
 function parseURLParams(url) {
 	let queryStart = url.indexOf("?") + 1;
@@ -38,16 +40,18 @@ function exec() {
 	let parameters = parseURLParams(urlString);
 	hiddenText.setAttribute('class', '');
 	addToCookie(parameters["toDisp"]);
-	hiddenText.innerHTML = parseCookie();
+	hiddenText.innerHTML = parseCookie().replace("<", "\<");
+	let debugButton = $1('button');
+	if (DEBUGGING) {
+		debugButton.setAttribute('class', '');
+	}
 }
 
 // Add the cookie to kep a running chat log
 // I enjoy my puns, so it is an "additive" :3
 function addToCookie(additive) {
 	let chatLog = accessCookie("log");
-	console.log(chatLog); // Testing purposes
 	chatLog = chatLog + "<br>" + additive;
-	console.log(chatLog); // Testing purposes
 	createCookie("log", chatLog);
 }
 
@@ -74,4 +78,10 @@ function parseCookie() {
 	let cookie = accessCookie("log");
 	// Return the log cookie!
 	return cookie;
+}
+
+// Cookie reset function to clear chat log
+function resetCookies() {
+	createCookie("log", ""); // I knew this would be helpful again!
+	console.log("Cookies reset.");
 }

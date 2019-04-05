@@ -20,5 +20,5 @@ html {
 }
 
 .hidden {
-	color: #000;
+	display: none;
 }
