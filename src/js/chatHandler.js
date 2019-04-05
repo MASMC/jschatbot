@@ -51,7 +51,7 @@ function exec() {
 // I enjoy my puns, so it is an "additive" :3
 function addToCookie(additive) {
 	let chatLog = accessCookie("log");
-	chatLog = chatLog + "<br>" + additive;
+	chatLog = chatLog + "<br>" + additive + "<br>" + respond(additive);
 	createCookie("log", chatLog);
 }
 
