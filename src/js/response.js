@@ -48,5 +48,5 @@ function checkStr(uInput, validator) {
 // Random responses, here we come!
 function respondRandom() {
 	// Chooses random response from the rResp array
-	return rRand[Math.floor(Math.random() * rRand.length)];
+	return rResp[Math.floor(Math.random() * rResp.length)];
 }
