@@ -85,3 +85,9 @@ function resetCookies() {
 	createCookie("log", ""); // I knew this would be helpful again!
 	console.log("Cookies reset.");
 }
+
+// Respond to a chat message
+function respond(msg) {
+	// Points to response.js
+	return response(msg);
+}
