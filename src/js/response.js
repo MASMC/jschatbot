@@ -11,6 +11,11 @@ const rResp = ["Oh?",
 			   "OwO"];
 
 function response(uInput) {
+	if (DEBUGGING) {
+		// Check the input, see wtf it is because this sure as hell ain't a string (12/04/2019)
+		console.log(uInput);
+	}
+
 	// Trim the response before processing
 	uInput = uInput.trim();
 
