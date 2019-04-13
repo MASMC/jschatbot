@@ -16,6 +16,9 @@ function response(uInput) {
 		console.log(uInput);
 	}
 
+	// Apparently we're being sent an array, and I don't feel like dealing with this shit. Just... do this thanks.
+	uInput = uInput[0];
+
 	// Trim the response before processing
 	uInput = uInput.trim();
 
@@ -45,6 +48,9 @@ function checkStr(uInput, validator) {
 	// Set up RegEx
 	validator = " " + validator + " ";
 	let rx = new RegExp(validator, "g");
+
+	// Box our input with spaces
+	uInput = ` $PuInput} `;
 
 	// Use RegEx to search the uInput
 	return (uInput.search(rx) > 0);

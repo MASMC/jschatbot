@@ -40,7 +40,7 @@ function exec() {
 	let parameters = parseURLParams(urlString);
 	hiddenText.setAttribute('class', '');
 	addToCookie(parameters["toDisp"]);
-	hiddenText.innerHTML = parseCookie().replace("<", "\<");
+	hiddenText.innerHTML = parseCookie().replace(/</gi, "&#60;").replace(/{cleanyeen}/gi, "<br>");
 	let debugButton = $1('button');
 	if (DEBUGGING) {
 		debugButton.setAttribute('class', '');
@@ -51,7 +51,7 @@ function exec() {
 // I enjoy my puns, so it is an "additive" :3
 function addToCookie(additive) {
 	let chatLog = accessCookie("log");
-	chatLog = chatLog + "<br>" + additive + "<br>" + respond(additive);
+	chatLog = chatLog + "{cleanyeen}" + additive + "{cleanyeen}" + respond(additive);
 	createCookie("log", chatLog);
 }
 
